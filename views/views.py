@@ -98,6 +98,11 @@ def doc():
 def doc_page():
     return render_template('doc-page.html')
 
+@app.route('/doc/<string:id>')
+def specific_section(id):
+    print(id)
+    return redirect('http://127.0.0.1:8000/doc'+id)
+
 #-------------------------------------------------------------------------#
 # Dashboard
 @app.route("/dashboard", methods=["POST", "GET"])
