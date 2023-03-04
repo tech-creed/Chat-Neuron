@@ -5,13 +5,13 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
+	<meta name="description" content="Welcome to our chatbot! Our chatbot is a cutting-edge artificial intelligence (AI) tool designed to help you interact with your customers, improve your customer service, and increase your business productivity. Our chatbot is built using Python and is powered by the latest natural language processing (NLP) technology, making it capable of understanding and responding to a wide range of customer queries and requests.">
 
 	<!-- title -->
 	<title>Home</title>
 
 	<!-- favicon -->
-	<link rel="shortcut icon" type="image/png" href="static/img/icon.png">
+	<link rel="shortcut icon" type="image/png" href="static/img/logo.png">
 	<!-- google font -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
@@ -26,6 +26,9 @@
 
 	<!-- bootstrap icon -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">	
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/atom-one-dark.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
 
 </head>
 
@@ -48,6 +51,7 @@
 						<!-- logo -->
 						<div class="site-logo">
 							<a href="/">
+								
 								<h3 style="color:aliceblue;">Chat Neuron</h3>
 							</a>
 						</div>
@@ -56,10 +60,10 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<li><a href="#home">Home</a></li>
-								<li><a href="#services">Service</a></li>
-								<li><a href="#about">About</a></li>
-								<li><a href="#samples">Samples</a></li>
+								<li><a href="#doc">Doc</a></li>
+								<li><a href="#tutorial">Tutorial</a></li>
+								<li><a href="#blog">Blog</a></li>
+								<li><a href="#community">Community</a></li>
 								<li class="login-btn btn"><a href="/login">Login</a></li>
 							</ul>
 						</nav>
@@ -74,17 +78,18 @@
 	<!-- end header -->
 
 	<!-- hero area -->
-	<div class="hero-area hero-bg" id="home">
+	<div class="hero-area hero-bg" id="doc">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-9 offset-lg-2 text-center">
 					<div class="hero-text">
 						<div class="hero-text-tablecell">
-							<p class="subtitle">Fast & Accurate</p>
-							<h1>AI Chat Library</h1>
+							<h1>Chat-Neuron</h1>
+							<p class="subtitle">A Python library for integrating Chat-Bot in your application</p>
+
 							<div class="hero-btns">
 								<a href="/register" class="boxed-btn">Get Started!</a>
-								<a href="#services" class="bordered-btn">Find Out More</a>
+								<a href="#tutorial" class="bordered-btn">Take the Tutorial ></a>
 							</div>
 						</div>
 					</div>
@@ -96,25 +101,21 @@
 	<!-- Services-->
 	<section class="page-section" id="services">
 		<div class="container">
-			<div class="text-center">
-				<h2 class="section-heading text-uppercase">Services</h2>
-				<h3 class="section-subheading text-muted">Our PCB defect detecting services.</h3>
-			</div>
 			<div class="row text-center">
 				<div class="col-md-4">
-					<i class="bi bi-motherboard"></i>
-					<h4 class="my-3">Broken traces</h4>
-					<p class="text-muted">identify the Broken traces of the Printed circuit board.</p>
+					<img src="static/img/integration.png" alt="integration">
+					<h4 class="my-3">Multiple integrations</h4>
+					<p class="text-muted">integrate with different APIs, such as social media platforms, chat applications.</p>
 				</div>
 				<div class="col-md-4">
-					<i class="bi bi-cpu"></i>
-					<h4 class="my-3">Burnt Traces</h4>
-					<p class="text-muted">identify the Burnt traces of the Printed circuit board.</p>
+					<img src="static/img/custom.png" alt="customizable">
+					<h4 class="my-3">Customizable responses</h4>
+					<p class="text-muted">enable users to customize the responses that the chatbot provides to suit their specific needs.</p>
 				</div>
 				<div class="col-md-4">
-					<i class="bi bi-tv"></i>
-					<h4 class="my-3">Computer Vision</h4>
-					<p class="text-muted">Our model find the defect of the PCB connection and solding.</p>
+					<img src="static/img/open-source.png" alt="open source">
+					<h4 class="my-3">Open-source</h4>
+					<p class="text-muted">open-source, allowing users to contribute to the project and improve the library over time.</p>
 				</div>
 			</div>
 		</div>
@@ -123,53 +124,51 @@
 	<section class="page-section" id="about">
 		<div class="container">
 			<div class="text-center">
-				<h2 class="section-heading text-uppercase">About</h2>
-				<h3 class="section-subheading text-muted">...</h3>
+				<h2 class="section-heading text-uppercase">Process Flow</h2>
+				<h3 class="section-subheading text-muted">Workflow of Our Library</h3>
 			</div>
 			<ul class="timeline">
 				<li>
-					<div class="timeline-image"><img class="rounded-circle img-fluid" src="static/img/about/1.jpg" alt="..." /></div>
+					<div class="timeline-image"><img class="rounded-circle img-fluid" src="static/img/about/1.png" alt="..." /></div>
 					<div class="timeline-panel">
 						<div class="timeline-heading">
-							<h4>Broken traces</h4>
+							<h4>Integrate the library</h4>
 						</div>
-						<div class="timeline-body"><p class="text-muted">identify the Broken traces of the Printed circuit board.</p></div>
+						<div class="timeline-body"><p class="text-muted">Developers can integrate the chatbot library with their application using the appropriate API or library.</p></div>
 					</div>
 				</li>
 				<li class="timeline-inverted">
-					<div class="timeline-image"><img class="rounded-circle img-fluid" src="static/img/about/2.jpg" alt="..." /></div>
+					<div class="timeline-image"><img class="rounded-circle img-fluid" src="static/img/about/2.png" alt="..." /></div>
 					<div class="timeline-panel">
 						<div class="timeline-heading">
-							<h4>Burnt Traces</h4>
+							<h4>Upload CSV File</h4>
 						</div>
-						<div class="timeline-body"><p class="text-muted">identify the Burnt traces of the Printed circuit board.</p></div>
+						<div class="timeline-body"><p class="text-muted">The user can upload a CSV file containing training data (Questions & Answers) for the chatbot to the application and using Deap Learning Techniques to train a chatbot model based on the user-provided training data.</p></div>
 					</div>
 				</li>
 				<li>
 					<div class="timeline-image"><img class="rounded-circle img-fluid" src="static/img/about/3.jpg" alt="..." /></div>
 					<div class="timeline-panel">
 						<div class="timeline-heading">
-							<h4>Computer Vision</h4>
+							<h4>NLP & Deap Learning Process</h4>
 						</div>
-						<div class="timeline-body"><p class="text-muted">Our model find the defect of the PCB connection and solding.</p></div>
+						<div class="timeline-body"><p class="text-muted">The backend process involves applying Natural Language Processing (NLP) techniques to preprocess user inputs, and using Deep Learning Techniques to generate appropriate responses</p></div>
 					</div>
 				</li>
 				<li class="timeline-inverted">
-					<div class="timeline-image">
-						<h4>
-							Computer Vision
-							<br />
-							Powered
-							<br />
-							AI!
-						</h4>
+					<div class="timeline-image"><img class="rounded-circle img-fluid" src="static/img/about/4.jpg" alt="..." /></div>
+					<div class="timeline-panel">
+						<div class="timeline-heading">
+							<h4>Response returned to the chat interface</h4>
+						</div>
+						<div class="timeline-body"><p class="text-muted">Developers use the chatbot library to generate responses to user inputs in their application.</p></div>
 					</div>
 				</li>
 			</ul>
 		</div>
 	</section>
 
-	<section class="page-section bg-light" id="samples">
+	<!-- <section class="page-section bg-light" id="samples">
 		<div class="container">
 			<div class="text-center">
 				<h2 class="section-heading text-uppercase">Samples</h2>
@@ -177,9 +176,9 @@
 			</div>
 			<div class="row">
 				<div class="col-lg-4 col-sm-6 mb-4">
-					<!-- Portfolio item 1-->
+					
 					<div class="portfolio-item">
-						<a class="portfolio-link" href="#home">
+						<a class="portfolio-link" href="#doc">
 							<img class="img-fluid" src="static/img/sample/1.jpg" alt="..." />
 						</a>
 						<div class="portfolio-caption">
@@ -189,9 +188,9 @@
 					</div>
 				</div>
 				<div class="col-lg-4 col-sm-6 mb-4">
-					<!-- Portfolio item 2-->
+					
 					<div class="portfolio-item">
-						<a class="portfolio-link" href="#home">
+						<a class="portfolio-link" href="#doc">
 							<img class="img-fluid" src="static/img/sample/2.png" alt="..." />
 						</a>
 						<div class="portfolio-caption">
@@ -201,9 +200,9 @@
 					</div>
 				</div>
 				<div class="col-lg-4 col-sm-6 mb-4">
-					<!-- Portfolio item 3-->
+					
 					<div class="portfolio-item">
-						<a class="portfolio-link" href="#home">
+						<a class="portfolio-link" href="#doc">
 							<img class="img-fluid" src="static/img/sample/3.jpg" alt="..." />
 						</a>
 						<div class="portfolio-caption">
@@ -213,9 +212,9 @@
 					</div>
 				</div>
 				<div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-					<!-- Portfolio item 4-->
+					
 					<div class="portfolio-item">
-						<a class="portfolio-link" href="#home">
+						<a class="portfolio-link" href="#doc">
 							<img class="img-fluid" src="static/img/sample/4.jpg" alt="..." />
 						</a>
 						<div class="portfolio-caption">
@@ -225,9 +224,9 @@
 					</div>
 				</div>
 				<div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
-					<!-- Portfolio item 5-->
+					
 					<div class="portfolio-item">
-						<a class="portfolio-link" href="#home">
+						<a class="portfolio-link" href="#doc">
 							<img class="img-fluid" src="static/img/sample/5.jpg" alt="..." />
 						</a>
 						<div class="portfolio-caption">
@@ -237,9 +236,9 @@
 					</div>
 				</div>
 				<div class="col-lg-4 col-sm-6">
-					<!-- Portfolio item 6-->
+					
 					<div class="portfolio-item">
-						<a class="portfolio-link" href="#home">
+						<a class="portfolio-link" href="#doc">
 							<img class="img-fluid" src="static/img/sample/6.jpg" alt="..." />
 						</a>
 						<div class="portfolio-caption">
@@ -250,16 +249,140 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 
+<section class="code-section">
+	<h1 class="code-h1">Code Examples</h1>
+	
+	<div class="code-container">
+		<div class="code-block">
+			<h3>Example 1</h3>
+			<p>This is an example of a function that adds two numbers together.</p>
+			<pre><code class="javascript">
+function sum(a, b) {
+	return a + b;
+}
 
-	<!-- jquery -->
+console.log(sum(2, 3)); // Output: 5
+			</code></pre>
+		</div>
+		
+		<div class="code-block">
+			<h3>Example 2</h3>
+			<p>This is an example of how to loop through an array and log each item to the console.</p>
+			<pre><code class="javascript">
+const colors = ['red', 'green', 'blue'];
+
+colors.forEach(color => {
+	console.log(color);
+});
+
+// Output:
+// red
+// green
+// blue
+			</code></pre>
+		</div>
+		
+		<div class="code-block">
+			<h3>Example 3</h3>
+			<p>This is an example of HTML markup for a basic web page.</p>
+			<pre><code class="html">
+<html>
+<head>
+	<title>My Website</title>
+</head>
+<body>
+	<h2>Hello, world!</h2>
+</section>
+
+	<footer id="footer" class="footer-1">
+		<div class="main-footer widgets-dark typo-light">
+		<div class="container">
+		<div class="row">
+		  
+		<div class="col-xs-12 col-sm-6 col-md-3">
+		<div class="widget subscribe no-box">
+		<h5 class="widget-title">CHAT NEURON<span></span></h5>
+		<p>A Python library for integrating Chat-Bot in your application.</p>
+		</div>
+		</div>
+		
+		<div class="col-xs-12 col-sm-6 col-md-3">
+		<div class="widget no-box">
+		<h5 class="widget-title">Quick Links<span></span></h5>
+		<ul class="thumbnail-widget">
+		<li>
+		<div class="thumb-content"><a href="#.">Get Started</a></div> 
+		</li>
+		<li>
+		<div class="thumb-content"><a href="#.">Documentation</a></div> 
+		</li>
+		<li>
+		<div class="thumb-content"><a href="#.">Api</a></div> 
+		</li>
+		<li>
+		<div class="thumb-content"><a href="#.">Tutorial</a></div> 
+		</li>
+		<li>
+		<div class="thumb-content"><a href="#.">Blog</a></div>  
+		</li>
+		<li>
+		<div class="thumb-content"><a href="#.">Community</a></div> 
+		</li>
+		<li>
+		<div class="thumb-content"><a href="#.">About</a></div> 
+		</li>
+		</ul>
+		</div>
+		</div>
+		
+		<div class="col-xs-12 col-sm-6 col-md-3">
+		<div class="widget no-box">
+		<h5 class="widget-title">Get Started<span></span></h5>
+		<p>Start developing now</p>
+		<a class="btn" href="/register" target="_blank">Register Now</a>
+		</div>
+		</div>
+		
+		<div class="col-xs-12 col-sm-6 col-md-3">
+		
+		<div class="widget no-box">
+		<h5 class="widget-title">Contact Us<span></span></h5>
+		
+		<p><a href="mailto:info@domain.com" title="glorythemes">info@techcreed.com</a></p>
+		<ul class="social-footer2">
+		<li class=""><a title="GitHub" target="_blank" href="https://github.com/tech-creed/Chat-Neuron"><i class="fa-brands fa-github  fa-2x"></i></a></li>
+		<li class=""><a href="https://www.facebook.com/" target="_blank" title="Facebook"><i class="fa-brands fa-stack-overflow fa-2x"></i></a></li>
+		<li class=""><a href="https://twitter.com" target="_blank" title="Twitter"><i class="fa-brands fa-facebook fa-2x"></i></a></li>
+		<li class=""><a title="instagram" target="_blank" href="https://www.instagram.com/"><i class="fa-brands fa-twitter fa-2x"></i></a></li>
+		</ul>
+		</div>
+		</div>
+		
+		</div>
+		</div>
+		</div>
+		  
+		<div class="footer-copyright">
+		<div class="container">
+		<div class="row">
+		<div class="col-md-12 text-center">
+		<p>Copyright Tech Creed © 2023. All rights reserved.</p>
+		</div>
+		</div>
+		</div>
+		</div>
+		</footer>
+
+		<!-- jquery -->
 	<script src="static/js/jquery-1.11.3.min.js"></script>
 	<!-- bootstrap -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
-	<script src="static/js/main.js"></script>
+	<script src="https://kit.fontawesome.com/5fe2f4c2ef.js" crossorigin="anonymous"></script>
 
+	<script src="static/js/main.js"></script>
 </body>
 
 </html>
