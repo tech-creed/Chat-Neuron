@@ -3,6 +3,8 @@ from app import *
 import secrets
 import bcrypt
 
+from utilss.upload import allowed_file, erase_dir, file_saver
+
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -105,5 +107,12 @@ def dashboard():
         for x in user:
             name = x
         return render_template('dashboard.html', name=name['name'], key=name['key'])
+    else:
+        return redirect('/login')
+
+@app.route('/upload', methods=['GET'])
+def uploadget():
+    if "email" in session:
+        return render_template('upload.html')
     else:
         return redirect('/login')
