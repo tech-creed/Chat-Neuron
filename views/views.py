@@ -1,5 +1,6 @@
 from flask import make_response,Flask, flash, redirect, render_template, request, url_for, session
 from app import *
+import secrets
 import bcrypt
 
 @app.route('/')
@@ -22,6 +23,8 @@ def signup():
 
         user_found = db.user.find_one({"name": user})
         email_found = db.user.find_one({"email": email})
+        
+        user_key = secrets.token_urlsafe(16)
 
         if user_found:
             message = 'There already is a user by that name'
@@ -35,7 +38,7 @@ def signup():
 
         else:
             hashed = bcrypt.hashpw(password2.encode('utf-8'), bcrypt.gensalt())
-            user_input = {'name': user, 'email': email, 'password': hashed}
+            user_input = {'name': user, 'email': email, 'password': hashed, 'key': user_key}
             db.user.insert_one(user_input)
             
             user_data = db.user.find_one({"email": email})
@@ -103,6 +106,9 @@ def specific_section(id):
 @app.route("/dashboard", methods=["POST", "GET"])
 def dashboard():
     if "email" in session:
-        return render_template('dashboard.html')
+        user = db.user.find({'email': session['email']})
+        for x in user:
+            name = x
+        return render_template('dashboard.html', name=name['name'], key=name['key'])
     else:
         return redirect('/login')

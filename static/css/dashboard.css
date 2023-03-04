@@ -1,0 +1,27 @@
+.name {
+    margin-top: 150px;
+}
+
+h3 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+thead tr {
+    color: #fff;
+    background-color: #F28123;
+}
+
+table {
+    margin-top: 40px;
+}
+
+.create-btn:hover {
+    color: black;
+    background-color: #F28123;
+}
+
+h4 {
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
