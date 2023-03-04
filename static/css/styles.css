@@ -78,11 +78,17 @@ body {
 
 .main-menu-wrap {
   position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-menu-wrap li{
+  margin: 30px;
+  font-size: 18px;
 }
 
 .site-logo {
   float: left;
-  max-width: 150px;
   padding: 6px 0;
 }
 
@@ -442,7 +448,6 @@ nav.main-menu ul li a {
   color: #fff;
   font-weight: 700;
   display: block;
-  padding: 15px;
 }
 
 nav.main-menu ul > li {
@@ -488,13 +493,9 @@ nav.main-menu ul li:last-child a {
   display: inline-block;
 }
 
-nav.main-menu > ul li:last-child {
-  float: right;
-}
 
 .site-logo {
   float: left;
-  max-width: 150px;
 }
 
 ul.sub-menu li:last-child {
