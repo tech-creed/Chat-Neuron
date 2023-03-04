@@ -44,3 +44,52 @@ def signup():
             return redirect('/dashboard')
 
     return render_template('register.html')
+
+#Login
+@app.route('/login', methods=["POST", "GET"])
+def login():
+    message = 'Please login to your account'
+    if "email" in session:
+        return redirect('/dashboard')
+
+    if request.method == "POST":
+        email = request.form.get("email")
+        password = request.form.get("password")
+       
+        email_found = db.user.find_one({"email": email})
+        if email_found:
+            email_val = email_found['email']
+            passwordcheck = email_found['password']
+            
+            if bcrypt.checkpw(password.encode('utf-8'), passwordcheck):
+                session["email"] = email_val
+                return redirect('/dashboard')
+            else:
+                if "email" in session:
+                    return redirect(url_for("logged_in"))
+                message = 'Wrong password'
+                return render_template('login.html', message=message)
+        else:
+            message = 'Email not found'
+            return render_template('login.html', message=message)
+
+    return render_template('login.html', message=message)
+
+#logout
+@app.route("/logout", methods=["POST", "GET"])
+def logout():
+    if "email" in session:
+        session.pop("email", None)
+        return redirect('/login')
+    else:
+        return redirect('/login')
+
+
+#-------------------------------------------------------------------------#
+# Dashboard
+@app.route("/dashboard", methods=["POST", "GET"])
+def dashboard():
+    if "email" in session:
+        return render_template('dashboard.html')
+    else:
+        return redirect('/login')
