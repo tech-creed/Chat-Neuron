@@ -85,6 +85,14 @@ def logout():
         return redirect('/login')
 
 
+@app.route('/documentation')
+def doc():
+    return render_template('doc.html')
+
+@app.route('/doc')
+def doc_page():
+    return render_template('doc-page.html')
+
 #-------------------------------------------------------------------------#
 # Dashboard
 @app.route("/dashboard", methods=["POST", "GET"])
