@@ -3,8 +3,6 @@ from app import *
 import secrets
 import bcrypt
 
-from utilss.upload import allowed_file, erase_dir, file_saver
-
 @app.route('/')
 def home():
     return render_template('index.html')
