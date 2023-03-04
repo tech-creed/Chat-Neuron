@@ -7,7 +7,7 @@ from tensorflow.keras import layers , activations , models , preprocessing, util
 
 import pickle
 
-def build_AI_Chatbot(csvFilePath, batch, epoch, savepath):
+def test_build(csvFilePath, batch, epoch, savepath):
     # dataset for the AI chatbot
     dataset = pd.read_csv(csvFilePath)
     questions = dataset['questions']
