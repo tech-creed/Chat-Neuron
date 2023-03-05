@@ -5,7 +5,11 @@ An Application and an AI Library can able to train NLP Chatbot Model with own cu
 `pip install ChatNeuron==1.1`
 
 ## Import the module
-`from ChatNeuron.ai import chatNeuron`
+```
+from ChatNeuron.ai import chatNeuron
+from tensorflow.keras import preprocessing
+import numpy as np
+```
 
 # Train Custome NLP Model
 Coloum name should be 'questions' and 'answers'. Example below,<br>
