@@ -198,44 +198,29 @@
 
 		<div class="code-container">
 			<div class="code-block">
-				<h3>Example 1</h3>
-				<p>This is an example of a function that adds two numbers together.</p>
+				<h3>Install the module</h3>
+				<p>Pip Install the Chat Neuron Module</p>
 				<pre><code class="javascript">
-function sum(a, b) {
-	return a + b;
-}
-
-console.log(sum(2, 3)); // Output: 5
+pip install ChatNeuron==1.1
 			</code></pre>
 			</div>
 
 			<div class="code-block">
-				<h3>Example 2</h3>
-				<p>This is an example of how to loop through an array and log each item to the console.</p>
+				<h3>Import Required Modules</h3>
+				<p>Tensorflow is backend module need to import them</p>
 				<pre><code class="javascript">
-const colors = ['red', 'green', 'blue'];
-
-colors.forEach(color => {
-	console.log(color);
-});
-
-// Output:
-// red
-// green
-// blue
+import numpy as np
+from tensorflow.keras import preprocessing
 			</code></pre>
 			</div>
 
 			<div class="code-block">
-				<h3>Example 3</h3>
-				<p>This is an example of HTML markup for a basic web page.</p>
+				<h3>Train your chatbot</h3>
+				<p>By calling one function with required parameters is enough,</p>
 				<pre><code class="html">
-<html>
-<head>
-	<title>My Website</title>
-</head>
-<body>
-	<h2>Hello, world!</h2>
+tokenizer, encoder_model, decoder_model, maxlen_questions, maxlen_answers = chatNeuron.build_chatbot(csvFilePath, batch, epoch, savepath)
+</code></pre>
+
 </section>
 
 	<footer id="footer" class="footer-1">
