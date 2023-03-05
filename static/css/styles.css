@@ -44,7 +44,7 @@ body {
   position: absolute;
   z-index: 999;
   width: 100%;
-  padding: 25px 0;
+  padding: 20px 0;
 }
 
 .top-header-area.white ul.navbar-nav li.nav-item a.nav-link, .top-header-area.white ul.navbar-nav li.nav-item.active a.nav-link {
@@ -57,7 +57,7 @@ body {
 
 .sticky-wrapper.is-sticky .top-header-area {
   background-color: #051922;
-  padding: 15px 0;
+  padding: 10px 0;
 }
 
 .top-header-area {
@@ -83,7 +83,7 @@ body {
 }
 
 .main-menu-wrap li{
-  margin: 30px;
+  margin: 20px;
   font-size: 18px;
 }
 
@@ -417,7 +417,7 @@ ul.navbar-nav li.nav-item a.nav-link, ul.navbar-nav li.nav-item.active a.nav-lin
   position: absolute;
   z-index: 999;
   width: 100%;
-  padding: 25px 0;
+  padding: 15px 0;
 }
 
 .top-header-area.white ul.navbar-nav li.nav-item a.nav-link, .top-header-area.white ul.navbar-nav li.nav-item.active a.nav-link {
@@ -458,7 +458,7 @@ nav.main-menu ul ul.sub-menu {
   position: absolute;
   background-color: #fff;
   width: 220px;
-  padding: 15px 15px;
+  padding: 10px 10px;
   margin: 0;
   left: 0;
   top: 50px;
@@ -480,8 +480,8 @@ nav.main-menu ul ul.sub-menu li {
 nav.main-menu ul ul.sub-menu li a {
   color: #555;
   font-weight: 600;
-  padding: 7px 10px;
-  font-size: 13px;
+  padding: 2px 1px;
+  font-size: 7px;
 }
 
 nav.main-menu ul > li:hover ul {
@@ -568,7 +568,7 @@ nav.main-menu ul ul.sub-menu li {
 
 nav.main-menu ul ul.sub-menu li a {
   color: #555;
-  padding: 8px;
+  padding: 2px;
   font-size: 13px;
   font-weight: 600;
 }

@@ -1,2 +1,8 @@
 pandas
 tensorflow
+json
+flask
+pymongo
+secrets
+bcrypt
+ChatNeuron
