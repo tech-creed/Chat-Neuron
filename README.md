@@ -79,3 +79,8 @@ print('-'*25)
 Insted of the question pass you own question.
 
 <hr>
+
+# Model for NLP
+
+![image](https://user-images.githubusercontent.com/65155327/222960648-8ca85e8f-6721-41d1-87ba-bdf42dc117af.png)
+
