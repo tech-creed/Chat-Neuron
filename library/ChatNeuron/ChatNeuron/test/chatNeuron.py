@@ -6,6 +6,7 @@ from keras import backend as K
 from tensorflow.keras import layers , activations , models , preprocessing, utils
 
 import pickle
+import glob
 
 def test_build(csvFilePath, batch, epoch, savepath):
     # dataset for the AI chatbot
@@ -95,11 +96,71 @@ def test_build(csvFilePath, batch, epoch, savepath):
     decoder_model = tf.keras.models.Model([decoder_inputs] + decoder_states_inputs,[decoder_outputs] + decoder_states)
     
     # Saving the Model and Tokenizer
-    encoder_model.save(savepath+'Encoder.h5')
-    decoder_model.save(savepath+'Decoder.h5')
+    encoder_model.save(savepath+'Encoder-'+str(maxlen_questions)+'-'+str(maxlen_answers)+'.h5')
+    decoder_model.save(savepath+'Decoder-'+str(maxlen_questions)+'-'+str(maxlen_answers)+'.h5')
     with open(savepath+'tokenizer.pickle', 'wb') as handle:
         pickle.dump(tokenizer, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
     return tokenizer, encoder_model, decoder_model, maxlen_questions, maxlen_answers
 
+#-------------------------------------------------------------------------------------------------------------------------------------#
+
+#test_build('../../../../common.csv', 16, 5, '../../../../bots/JDW9W2YHR9FJE80FC/')
+#-------------------------------------------------------------------------------------------------------------------------------------#
+#-------------------------------------------------------------------------------------------------------------------------------------#
+
+# Inference Prediction
+def preprocess_input(input_sentence,tokenizer,maxlen_questions):
+    tokens = input_sentence.lower().split()
+    tokens_list = []
+    for word in tokens:
+        tokens_list.append(tokenizer.word_index[word]) 
+    return preprocessing.sequence.pad_sequences([tokens_list] , maxlen=maxlen_questions , padding='post')
+
+def responce_chatbot(botID,question):
+    model_location = f'../../../../bots/{botID}/'
+    models = sorted(glob.glob(f'../../../../bots/{botID}/*h5'))
+    maxlen_questions = models[0].split('Decoder')[-1].split('-')[1]
+    maxlen_answers = models[0].split('Decoder')[-1].split('-')[-1].split('.')[0]
+    encoderModel = tf.keras.models.load_model(models[1])
+    decoderModel = tf.keras.models.load_model(models[0])
+    with open(f'../../../../bots/{botID}/tokenizer.pickle', 'rb') as f:
+        tokenizer = pickle.load(f)
+
+    # print(encoderModel, decoderModel, tokenizer)
+
+    states_values = encoderModel.predict(preprocess_input(question,tokenizer,int(maxlen_questions)), verbose=0)
+    empty_target_seq = np.zeros((1 , 1))
+    empty_target_seq[0, 0] = tokenizer.word_index['start']
+    stop_condition = False
+    decoded_translation = ''
+    
+    while not stop_condition :
+        dec_outputs , h , c = decoderModel.predict([empty_target_seq] + states_values, verbose=0)
+        sampled_word_index = np.argmax(dec_outputs[0, -1, :])
+        sampled_word = None
+        
+        for word , index in tokenizer.word_index.items() :
+            if sampled_word_index == index :
+                decoded_translation += f' {word}'
+                sampled_word = word
+        
+        if sampled_word == 'end' or len(decoded_translation.split()) > int(maxlen_answers):
+            stop_condition = True
+            
+        empty_target_seq = np.zeros((1 , 1))  
+        empty_target_seq[0 , 0] = sampled_word_index
+        states_values = [h , c] 
+    print(f'Human: {question}')
+    print()
+    decoded_translation = decoded_translation.split(' end')[0]
+    print(f'Bot: {decoded_translation}')
+    print('-'*25)
+        
+
+#-------------------------------------------------------------------------------------------------------------------------------------#
+
+
+responce_chatbot('JDW9W2YHR9FJE80FC','you can not move')
+#-------------------------------------------------------------------------------------------------------------------------------------#
 #-------------------------------------------------------------------------------------------------------------------------------------#

@@ -104,5 +104,5 @@ def build_chatbot(csvFilePath, batch, epoch, savepath):
 
 #-------------------------------------------------------------------------------------------------------------------------------------#
 
-def responce_chatbot(botID,ID):
+def responce_chatbot(botID,question):
     return 1
