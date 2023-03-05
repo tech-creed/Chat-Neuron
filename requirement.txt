@@ -1,2 +1,10 @@
 pandas
 tensorflow
+os
+sys
+json
+flask
+pymongo
+secrets
+bcrypt
+ChatNeuron
