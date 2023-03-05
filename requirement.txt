@@ -1,7 +1,5 @@
 pandas
 tensorflow
-os
-sys
 json
 flask
 pymongo
